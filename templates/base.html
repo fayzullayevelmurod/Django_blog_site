@@ -11,6 +11,16 @@
     <title>{% block title %}{% endblock title %}</title>
 </head>
 <body>
+    <script>
+        function setPage(url){
+            $.ajax({
+                url:url,
+                success: function(response){
+                    $("#main").html(response);
+                }
+            })
+        }
+    </script>
     {% block content %}
     
     {% endblock content %}

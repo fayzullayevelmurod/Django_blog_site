@@ -1,34 +1,47 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
-    Elmurod Fayzullayev
+    New Blog
 {% endblock title %}
 
-{% block  %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Elmurod Blog</a>
+      <a class="navbar-brand text-warning fw-bold" href="#">NewsBlog</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
           </li>
           {% if request.user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="#">Publish Article</a>
+            <a class="nav-link text-white" href="#">Publish Article</a>
           </li>
           {% endif %}
         </ul>
         <div class="navbar-text d-flex">
             {% if request.user.is_authenticated %}
-                <a href="" class="btn btn-primary-outline">Logout</a>
+                <a href="" class="btn btn-warning">Logout</a>
             {% else %}
-                <a href="" class="btn btn-primary-outline">Login</a>
+                <a href="" class="btn btn-warning">Login</a>
             {% endif %}
         </div>
       </div>
     </div>
-  </nav>
-{% endblock  %}
+</nav>
+<div id="main">
+
+</div>
+
+<footer id="footer" class="bg-dark">
+  <div class="container d-flex justify-content-center">
+    <h5 class="text-center text-warning fw-bold p-5">News Blog</h5>
+  </div>
+</footer>
+<script>
+  setPage('home/')
+</script>
+{% endblock content %}
