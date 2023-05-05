@@ -19,7 +19,7 @@
                     <div class="card ml-2 mb-3">
                         <div class="card-body">
                             <span class="card-text">{{i.title}}</span><br>
-                            <a class="mt-2 mb-2" href="{% url 'article_detail' article.id %}" style="display: inline-block; text-decoration: none !important; padding:5px 20px; background-color: orange; color: white;">Read More</a><br>
+                            <a class="mt-2 mb-2 pro-link"  data-url="{% url 'article_detail' i.id %}" style="cursor: pointer; display: inline-block; text-decoration: none !important; padding:5px 20px; background-color: orange; color: white;">Read More</a><br>
                             <small class="text-muted">{{i.created_at|timesince}}ago</small>
                         </div>
                     </div>

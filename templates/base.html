@@ -20,6 +20,11 @@
                 }
             })
         }
+        $('.pro-link').click(function(event){
+            event.preventDefault();
+            var url = $(this).data('url')
+            setPage(url)
+        })
     </script>
     {% block content %}
     
